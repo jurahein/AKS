@@ -12,13 +12,11 @@ resource "azurerm_virtual_network" "vnet" {
   dns_servers         = ["10.0.0.4", "10.0.0.5"]
 
   subnet {
-    name           = "juraciVM"
-    address_prefix = "10.0.1.0/24"
+    name           = "VM"
   }
 
   subnet {
-    name           = "juraciAKS"
-    address_prefix = "10.0.2.0/24"
+    name           = "AKS"
     security_group = azurerm_network_security_group.sg.id
   }
 
